@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { motion, Reorder } from "framer-motion/framer-motion";
+import { motion, Reorder } from "framer-motion";
 import { pageAnimation, zoomIn } from "../animations";
 import TaskItem from "../components/TaskItem";
 

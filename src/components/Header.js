@@ -1,7 +1,7 @@
 import React from "react";
 import { func, string } from "prop-types";
 import styled from "styled-components";
-import { motion } from "framer-motion/framer-motion";
+import { motion } from "framer-motion";
 import { slideLeft, slideRight } from "../animations";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Reorder } from "framer-motion/framer-motion";
+import { Reorder } from "framer-motion";
 import {zoomIn} from '../animations';
 import toast from "react-hot-toast";
 import {
