@@ -6,3 +6,5 @@
 - dark/light mode switch
 - animations
 - responsive
+
+[Demo](https://taskeo.netlify.app/)
