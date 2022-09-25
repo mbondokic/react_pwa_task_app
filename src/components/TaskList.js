@@ -12,9 +12,9 @@ const TaskList = ({
   inputRef
 }) => {
   return (
-    <>
+    <StyledList>
       {filteredTasks?.length ? (
-        <StyledList
+        <Reorder.Group
           axis="y"
           values={tasks}
           onReorder={setTasks}
@@ -35,19 +35,19 @@ const TaskList = ({
               />
             );
           })}
-        </StyledList>
+        </Reorder.Group>
       ) : (
         <NoTasksMessage variants={zoomIn} initial="hidden" animate="show">
           No tasks to show.
         </NoTasksMessage>
       )}
-    </>
+    </StyledList>
   );
 };
 
 export default TaskList;
 
-const StyledList = styled(Reorder.Group)`
+const StyledList = styled.div`
   transition: all 0.3s ease-in;
   li {
     padding-left: 2.5rem;

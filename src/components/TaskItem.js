@@ -1,19 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import { Reorder } from "framer-motion";
-import {zoomIn} from '../animations';
-import toast from "react-hot-toast";
+import React from 'react';
+import styled from 'styled-components';
+import { Reorder } from 'framer-motion';
+import { zoomIn } from '../animations';
+import toast from 'react-hot-toast';
 import {
   MdModeEdit,
   MdDeleteOutline,
   MdOutlineCircle,
-  MdOutlineCheckCircle
-} from "react-icons/md";
+  MdOutlineCheckCircle,
+} from 'react-icons/md';
 
 const TaskItem = ({ task, tasks, setTasks, setEditTask, inputRef, value }) => {
   const deleteHandler = () => {
     setTasks(tasks.filter((item) => item.id !== task.id));
-    toast("Task deleted!", { icon: "👋🏻" });
+    toast('Task deleted!', { icon: '👋🏻' });
   };
 
   const editHandler = ({ id }) => {
@@ -32,29 +32,31 @@ const TaskItem = ({ task, tasks, setTasks, setEditTask, inputRef, value }) => {
       })
     );
     if (task.completed === false) {
-      toast("Good job!", { icon: "👏🏻" });
+      toast('Good job!', { icon: '👏🏻' });
     }
   };
 
   return (
-    <StyledTaskItem
-      className="list-style"
-      value={value}
-      variants={zoomIn}
-    >
-      <p className={`${task.completed ? "completed" : ""}`}>{task.text}</p>
-      <MdModeEdit className="edit" onClick={() => editHandler(task)} />
-      <MdDeleteOutline className="delete" onClick={deleteHandler} />
-      <span className="check" onClick={completeHandler}>
-        {task.completed ? <MdOutlineCheckCircle className="checked" /> : <MdOutlineCircle />}
-      </span>
+    <StyledTaskItem>
+      <Reorder.Item className="list-style" value={value} variants={zoomIn}>
+        <p className={`${task.completed ? 'completed' : ''}`}>{task.text}</p>
+        <MdModeEdit className="edit" onClick={() => editHandler(task)} />
+        <MdDeleteOutline className="delete" onClick={deleteHandler} />
+        <span className="check" onClick={completeHandler}>
+          {task.completed ? (
+            <MdOutlineCheckCircle className="checked" />
+          ) : (
+            <MdOutlineCircle />
+          )}
+        </span>
+      </Reorder.Item>
     </StyledTaskItem>
   );
 };
 
 export default TaskItem;
 
-const StyledTaskItem = styled(Reorder.Item)`
+const StyledTaskItem = styled.div`
   position: relative;
   margin-bottom: 0.5rem;
   cursor: pointer;
@@ -64,9 +66,9 @@ const StyledTaskItem = styled(Reorder.Item)`
     inline-size: 80%;
     overflow-wrap: break-word;
   }
-  &::after {
+  li::after {
     position: absolute;
-    content: "";
+    content: '';
     top: 10%;
     right: 4.5rem;
     width: 1px;
@@ -75,7 +77,7 @@ const StyledTaskItem = styled(Reorder.Item)`
   }
   .check {
     position: absolute;
-    content: "";
+    content: '';
     top: 50%;
     transform: translateY(-50%);
     left: 0.75rem;
@@ -89,7 +91,7 @@ const StyledTaskItem = styled(Reorder.Item)`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: all .1s ease-in;
+    transition: all 0.1s ease-in;
     &.edit {
       right: 2.75rem;
     }
