@@ -1,6 +1,6 @@
 {
-  "short_name": "Tasks app",
-  "name": "React PWA tasks app",
+  "short_name": "Taskeo",
+  "name": "Taskeo",
   "icons": [
     {
       "src": "favicon.ico",
