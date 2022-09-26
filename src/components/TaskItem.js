@@ -14,6 +14,7 @@ const TaskItem = ({ task, tasks, setTasks, setEditTask, inputRef, value }) => {
   const deleteHandler = () => {
     setTasks(tasks.filter((item) => item.id !== task.id));
     toast('Task deleted!', { icon: '👋🏻' });
+    setEditTask('');
   };
 
   const editHandler = ({ id }) => {

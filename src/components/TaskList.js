@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import { motion, Reorder } from "framer-motion";
-import { pageAnimation, zoomIn } from "../animations";
-import TaskItem from "../components/TaskItem";
+import React from 'react';
+import styled from 'styled-components';
+import { motion, Reorder } from 'framer-motion';
+import { pageAnimation, zoomIn } from '../animations';
+import TaskItem from '../components/TaskItem';
 
 const TaskList = ({
   tasks,
   setTasks,
   setEditTask,
   filteredTasks,
-  inputRef
+  inputRef,
 }) => {
   return (
     <StyledList>
@@ -58,4 +58,5 @@ const NoTasksMessage = styled(motion.p)`
   color: ${({ theme }) => theme.textPrimary};
   font-size: 1.5rem;
   text-align: center;
+  margin-top: 3rem;
 `;
