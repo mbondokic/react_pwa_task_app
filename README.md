@@ -7,4 +7,4 @@
 - animations
 - responsive
 
-[Demo](https://taskeo.netlify.app/)
+[Demo](https://taskmode.netlify.app/)
