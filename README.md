@@ -6,5 +6,6 @@
 - dark/light mode switch
 - animations
 - responsive
+- PWA
 
 [Demo](https://taskmode.netlify.app/)
